@@ -4,22 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Snackbar</title>
+    <title>Promise</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load
-      src="./partials/header.html"
-      icon-path="./img/sprite.svg#logo"
-      highlight-curr="active"
-    />
+    <main class="promise">
+      <form class="form">
+        <label class="delay">
+          Delay (ms)
+          <input type="number" name="delay" required />
+        </label>
 
-    <main>
-      <div class="container">
-        <a class="back-link" href="./index.html">Go back</a>
+        <fieldset class="state">
+          <legend class="state-legend">State</legend>
+          <label>
+            <input type="radio" name="state" value="fulfilled" required />
+            <span>Fulfilled</span>
+          </label>
+          <label>
+            <input
+              class="rej"
+              type="radio"
+              name="state"
+              value="rejected"
+              required
+            />
+            <span>Rejected</span>
+          </label>
+        </fieldset>
 
-        <h1 class="main-title">Snackbar</h1>
-      </div>
+        <button class="create-btn" type="submit">Create notification</button>
+      </form>
     </main>
     <script type="module" src="./js/2-snackbar.js"></script>
   </body>
