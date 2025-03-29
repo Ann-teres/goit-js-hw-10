@@ -1,39 +1,35 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-
 // Отримуємо елементи форми
 const form = document.querySelector('.form');
-const delayInput = form.querySelector('input[name:"delay"]');
-const stateRadios = form.querySelectorAll('input[name = "state"]');
+const delayInput = form.querySelector('input[name="delay"]');
+const stateRadios = form.querySelectorAll('input[name="state"]');
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const delay = parseInt(delayInput.value, 10);
-    conststate = Array.form(stateRadio).find(radio => radio.chcked)?.value;
+  const delay = parseInt(delayInput.value, 10);
+  const state = Array.from(stateRadios).find(radio => radio.checked)?.value;
 
-    if (isNan(delay) || !state) {
-        iziToast.error({ message: 'Please provide valied input.' });
-        return;
-    }
-});
+  if (isNaN(delay) || !state) {
+    iziToast.error({ message: 'Please provide valid input.' });
+    return;
+  }
 
-// Створюємо проміс
-const promise = new Promise((resolve, reject) => {
+  // Створюємо проміс
+  const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        if (state === 'fulfilled') {
-            resolve(delay);
-        } else {
-            reject(delay)
-        }
+      if (state === 'fulfilled') {
+        resolve(delay);
+      } else {
+        reject(delay);
+      }
     }, delay);
-});
+  });
 
-
-// Обробка виконання промісу
-  
-promise
+  // Обробка виконання промісу
+  promise
     .then((fulfilledDelay) => {
       iziToast.success({
         message: `✅ Fulfilled promise in ${fulfilledDelay}ms`,
@@ -55,6 +51,8 @@ promise
         iconUrl: "", 
       });
     });
+});
+
 
 iziToast.show({
   title: "Success",
