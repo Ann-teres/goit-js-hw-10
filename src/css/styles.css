@@ -258,3 +258,18 @@ label {
 .iziToast {
   width: 383px !important;
 }
+
+.radio-option {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}

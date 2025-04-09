@@ -59,3 +59,19 @@ iziToast.show({
   message: "Your message here",
 
 });
+
+
+stateRadios.forEach(radio => {
+  radio.addEventListener('change', () => {
+    // Спочатку видаляємо клас active у всіх label
+    document.querySelectorAll('.radio-option').forEach(label => {
+      label.classList.remove('active');
+    });
+
+    // Додаємо клас active до вибраного
+    const selectedLabel = radio.closest('.radio-option');
+    if (selectedLabel) {
+      selectedLabel.classList.add('active');
+    }
+  });
+});
