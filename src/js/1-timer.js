@@ -1,7 +1,18 @@
-
 import flatpickr from "flatpickr";
-import iziToast from "izitoast";
+import "flatpickr/dist/flatpickr.min.css";
+
+
+const input = document.querySelector("#datetime-picker");
+flatpickr(input, {});
+
+
+// import "../node_modules/izitoast/dist/css/iziToast.min.css"; 
+// import iziToast from "izitoast";  
 import "izitoast/dist/css/iziToast.min.css";
+import iziToast from "izitoast/dist/js/iziToast.min.js";
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let userSelectedDate = 0;
